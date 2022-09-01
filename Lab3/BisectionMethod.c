@@ -5,7 +5,8 @@ double func(double x){
 return (x*x*x)-(x*x)+2;
 
 }
-//using counter
+
+//using Iteration Method
 void bisection(double a,double b,int e){
 
     if(func(a)*func(b)>=0){
@@ -35,8 +36,8 @@ void bisection(double a,double b,int e){
     printf("The Value of Root is %lf",c);
 }
 
-//void bisection(double a,double b,double e){
-void bisection(double a,double b,int e){
+//using precision Method
+void bisection(double a,double b,double e){
 
     if(func(a)*func(b)>=0){
     printf("Please Enter Correct Boundaries");
@@ -44,10 +45,8 @@ void bisection(double a,double b,int e){
     }
     //int cnt=0;
     double c;
-    //while((b-a)>=e){          //to get precisions upto e decimal places
-    //while(cnt<e){               //to get till e iterations
+    while((b-a)>=e){          //to get precisions upto e decimal places
     for(int i=0;i<e;i++){
-    //cnt++;
     c=(a+b)/2;
     if(func(c)==0.0)break;
 
