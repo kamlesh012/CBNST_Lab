@@ -1,0 +1,36 @@
+ #include<stdio.h>
+#include<math.h>
+
+float func(float x)
+{
+    float a;
+    a=x*x*x;
+    return a;
+}
+
+int main()
+{
+	
+    int n,i;
+    float l,u,h,sum,integral;
+    
+    printf("\n Enter the upper limit: ");
+    scanf ("%f",&u);
+    printf("\n Enter the lower limit: ");
+    scanf ("%f",&l);
+    printf("\n Enter the interval: ");
+    scanf ("%d",&n);
+
+    h=(u-l)/n;
+    sum=func(u)+func(l);
+    
+    double ans=0.0f;
+    for(double x=l+h;x<u;x+=h){
+        ans+=(2*func(x));
+    }
+    float fin=(sum+ans)*(h/2.0);
+    printf("%f\n",fin);
+    
+    return 0;
+    
+}  
